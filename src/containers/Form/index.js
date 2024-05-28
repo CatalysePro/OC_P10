@@ -1,3 +1,4 @@
+// V_1 : correction of failed test on the form submission
 import { useCallback, useState } from "react";
 import PropTypes from "prop-types";
 import Field, { FIELD_TYPES } from "../../components/Field";
@@ -16,6 +17,7 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
+        onSuccess();  // Add call to onSuccess after successfull API connexion
       } catch (err) {
         setSending(false);
         onError(err);

@@ -1,3 +1,5 @@
+// V1 modify function changeValue_ makes filtering of EventList working
+
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from "react";
@@ -15,11 +17,19 @@ const Select = ({
 }) => {
   const [value, setValue] = useState();
   const [collapsed, setCollapsed] = useState(true);
+
+  // const changeValue = (newValue) => {
+  //   onChange();
+  //   setValue(newValue);
+  //   setCollapsed(newValue);
+  // };
+
   const changeValue = (newValue) => {
-    onChange();
     setValue(newValue);
-    setCollapsed(newValue);
+    setCollapsed(true); // collapse the list after selecting an option
+    onChange(newValue); // Pass selected value to onChange function
   };
+
   return (
     <div className={`SelectContainer ${type}`} data-testid="select-testid">
       {label && <div className="label">{label}</div>}

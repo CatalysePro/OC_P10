@@ -1,3 +1,4 @@
+// V1_Last event solved
 import Menu from "../../containers/Menu";
 import ServiceCard from "../../components/ServiceCard";
 import EventCard from "../../components/EventCard";
@@ -13,7 +14,8 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  const {last} = useData()
+  // const {last} = useData()
+  const { data } = useData(); // use var data of DataContext compo which retrives jason data
   return <>
     <header>
       <Menu />
@@ -115,14 +117,16 @@ const Page = () => {
     </main>
     <footer className="row">
       <div className="col presta">
-        <h3>Notre derniére prestation</h3>
-        <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
-          date={new Date(last?.date)}
-          small
-          label="boom"
-        />
+        <h3>Notre dernière prestation</h3>
+        {data && data.events && data.events.length > 0 && (
+          <EventCard
+            imageSrc={data.events[data.events.length - 1].cover}
+            title={data.events[data.events.length - 1].title}
+            date={new Date(data.events[data.events.length - 1].date)}
+            small={false} // init at false to make it work
+            label="boom"
+          />
+        )}
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>

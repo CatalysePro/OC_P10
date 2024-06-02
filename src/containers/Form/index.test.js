@@ -1,3 +1,5 @@
+// v1 checks if fields are filled in before sending email
+// UNCOMMENT the additionnal tests hereunder to make them work --> file to be corrected : Form.js (not available)
 import { fireEvent, render, screen } from "@testing-library/react";
 import Form from "./index";
 
@@ -27,3 +29,16 @@ describe("When Events is created", () => {
     });
   });
 });
+
+// additional test for filled in fields
+
+// describe("When clicking the submit button with empty fields", () => {
+//   it("displays an error message about required fields", async () => {
+//     render(<Form />);
+//     fireEvent.click(await screen.findByText("Envoyer"));
+    
+//     // Assuming that if there was an error, it would contain this text
+//     const errorMessage = await screen.findByText(/tous les champs doivent être remplis/i);
+//     expect(errorMessage).toBeInTheDocument();
+//   });
+// });

@@ -117,8 +117,16 @@ const Page = () => {
     </main>
     <footer className="row">
       <div className="col presta">
+        {/* <h3>Notre derniére prestation</h3>
+        <EventCard
+          imageSrc={last?.cover}
+          title={last?.title}
+          date={new Date(last?.date)}
+          small
+          label="boom"
+        /> */}
         <h3>Notre dernière prestation</h3>
-        {data && data.events && data.events.length > 0 && (
+        {data && data.events && data.events.length > 0 && ( // possible to set up a var for  -1 calculation
           <EventCard
             imageSrc={data.events[data.events.length - 1].cover}
             title={data.events[data.events.length - 1].title}

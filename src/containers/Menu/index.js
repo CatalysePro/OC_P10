@@ -1,3 +1,4 @@
+// v1 : file unchanged need to add ids to the different sections in the Page component
 /* eslint-disable no-return-assign */
 import Button from "../../components/Button";
 import Logo from "../../components/Logo";

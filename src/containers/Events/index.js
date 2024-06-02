@@ -1,4 +1,5 @@
-// v5_filter works remains click page 2 when all categories displayed
+// v6_filter works 
+// v7_ events sorted by descending dates
 import { useState } from "react";
 import EventCard from "../../components/EventCard";
 import Select from "../../components/Select";
@@ -16,7 +17,9 @@ const EventList = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // use selected type value for filtering events
-  const filteredEvents = (data?.events || []).filter((event) => !type || event.type === type);
+  const filteredEvents = (data?.events || [])
+    .filter((event) => !type || event.type === type)
+    .sort((a, b) => new Date(b.date) - new Date(a.date)); // sorting events by descending dates
 
   const changeType = (evtType) => {
     setCurrentPage(1);
@@ -63,8 +66,7 @@ const EventList = () => {
               ))}
           </div>
           <div className="Pagination">
-            {[...Array(pageNumber || 0)].map((_, n) => (
-                // no way to go page 2 when all types are displayed -- the use of index doesn't change anything -- 
+            {[...Array(pageNumber || 0)].map((_, n) => ( 
                 // eslint-disable-next-line react/no-array-index-key
                 <a key={n} href="#events" onClick={() => setCurrentPage(n + 1)}>
                   {n + 1}

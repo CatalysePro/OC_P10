@@ -1,3 +1,5 @@
+// v1_ additionnal test for social media links
+// UNCOMMENT the additionnal tests hereunder to make them work --> file to be corrected : Page.js (not available)
 import { fireEvent, render, screen } from "@testing-library/react";
 import Home from "./index";
 
@@ -42,3 +44,27 @@ describe("When a page is created", () => {
     // to implement
   })
 });
+
+// additional test for social media direction 
+
+// describe("When social media icons are clicked", () => {
+//   it("they do not navigate to external pages", () => {
+//     render(<Home />);
+//     const socialMediaLinks = [
+//       { name: 'twitch', href: '#twitch' },
+//       { name: 'facebook', href: '#facebook' },
+//       { name: 'twitter', href: '#twitter' },
+//       { name: 'youtube', href: '#youtube' },
+//     ];
+
+//     socialMediaLinks.forEach(({ name, href }) => {
+//       const linkElement = screen.getByRole('link', { name });
+//       expect(linkElement).toBeInTheDocument();
+//       expect(linkElement).toHaveAttribute('href', href);
+
+//       fireEvent.click(linkElement);
+//       // Check the current URL doesn't change when a click occurs
+//       expect(window.location.href).not.toContain(href);
+//     });
+//   });
+// });

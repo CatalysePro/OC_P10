@@ -14,7 +14,7 @@ L'application est le site d'une agence evenementielle.
 ## Tests
 - `yarn test`
 
-## =====================================================
+## ======================================================
 
 ## YB OC_P10 Deliverable
 
@@ -56,5 +56,9 @@ however, some operationnal files have been corrected and are available on demand
 
 As a consequence, by uncommenting the additionnal code lines in the 3 corresponding test files, 
 after running the test command:  
-                                on the existing 16 test suites 3 will fail,
-                                corresponding to a total of 5 failed additionnal unitary tests on a new total of 54.
+                                * on the existing 16 test suites 3 will fail,
+                                * corresponding to a total of 5 failed additionnal unitary tests on a new total of 54.
+
+
+The end2end Tests plan document will describe the initial tests of which the detected errors have been fixed and it 
+will describe the new tests.

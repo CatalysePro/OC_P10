@@ -19,7 +19,7 @@ L'application est le site d'une agence evenementielle.
 ## YB OC_P10 Deliverable
 
 ## For terminal tests & console warnings : 7 corrected operational files 
-- src/containers/Slider (internal ref slider_v7) --> CORRECTS SLIDER
+- src/containers/Slider (internal ref slider_v8 + Slider_Style_v1 ) --> CORRECTS SLIDER
 - src/helpers/Date (internal ref helperDate_v1) --> CORRECTS SLIDER' SLIDES SORTING
 
 - src/components/Select (internal ref select_v1) --> CORRECTS EVENTS GALLERY FILTERING

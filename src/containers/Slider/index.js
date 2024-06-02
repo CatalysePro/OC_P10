@@ -1,5 +1,5 @@
-// v_7 slider working and no more uncaught errors due to setTimeout + getMonth function corrected in DateHelpers component
-// radio button click disabled, erase onChange()
+// v_8 slider working and no more uncaught errors due to setTimeout + getMonth function corrected in DateHelpers component
+// radio button click disabled via css/scss but maint onChange() to avoid warning
 import React, { useEffect, useState } from "react";
 import { useData } from "../../contexts/DataContext";
 import { getMonth } from "../../helpers/Date"; // necessary for test (date text rendering)
@@ -60,7 +60,8 @@ const Slider = () => {
                   type="radio"
                   name="radio-button"
                   checked={index === radioIdx}
-                  // onChange={() => setIndex(radioIdx)} // Add an onChange handler to make the button editable
+                  onChange={() => setIndex(radioIdx)} // Add an onChange handler to make the button editable
+                  // But disable the radio button via scss/css to prevent user interaction
                 />
               ))}
             </div>

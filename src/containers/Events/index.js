@@ -13,13 +13,16 @@ const PER_PAGE = 9;
 
 const EventList = () => {
   const { data, error } = useData();
-  const [type, setType] = useState(null); // type property initialized at null
+  const [type, setType] = useState(null); // ** type property initialized at null
   const [currentPage, setCurrentPage] = useState(1); // currentPage initialized at 1
 
-  // use selected type value for filtering events
-  const filteredEvents = (data?.events || [])
-    .filter((event) => !type || event.type === type) // filter events based on the selected type
-    .sort((a, b) => new Date(b.date) - new Date(a.date)); // sorting events by descending dates
+  // ** use selected type value for filtering events
+  const filteredEvents = (
+    data?.events || []
+  ).filter((event) => 
+    !type || event.type === type) // ** filter events based on the selected type
+    .sort((a, b) => 
+      new Date(b.date) - new Date(a.date)); // ** sorting events by descending dates
 
   const changeType = (evtType) => {
     setCurrentPage(1); // reset to the first page when type changes
@@ -29,7 +32,7 @@ const EventList = () => {
     console.log("Type sélectionné :", evtType);
   };
 
-  const pageNumber = Math.ceil(filteredEvents.length / PER_PAGE); // Math.ceil to round up to the next whole number of pageNumber
+  const pageNumber = Math.ceil(filteredEvents.length / PER_PAGE); // ** Math.ceil to round up to the next whole number of pageNumber
 
   const typeList = new Set(data?.events.map((event) => event.type)); // create a unique list of event types
 
@@ -46,7 +49,7 @@ const EventList = () => {
           <h3 className="SelectTitle">Catégories</h3>
           <Select
             selection={Array.from(typeList)} // convert typeList to an array and pass it to Select component
-            onChange={(value) => changeType(value)} //  handle type change
+            onChange={(value) => changeType(value)} //  ** handle type change directly without prior check of its existence
           />
           <div id="events" className="ListContainer">
             {filteredEvents

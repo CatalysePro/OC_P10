@@ -27,7 +27,7 @@ L'application est le site d'une agence evenementielle.
 
 - src/containers/Form (internal ref Form_v1) ---> CORRECTS FORM SUBMISSION MESSAGE
 
-- src/pages/Home (internal ref Page_v1) --> CORRECTS LAST EVENTS IN THE FOOTER
+- src/pages/Home (internal ref Page_v3) --> CORRECTS LAST EVENTS IN THE FOOTER
 
 - src/components/Logo (internal ref logo_v1) --> CORRECTS CONSOLE STYLE WARNINGS
 
